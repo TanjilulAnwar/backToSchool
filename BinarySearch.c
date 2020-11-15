@@ -19,10 +19,11 @@ int main(void) {
     1,5,9,12,43,56,66,79,81,97,100
   };
 
-int t = myAlgorithm4(11, arr,100);
-if(t==1)
+int t = myAlgorithm4(11, arr,56);
+if(t)
   printf("Found");
 else
   printf("Not found");
-}
 
+  return 0;
+}
