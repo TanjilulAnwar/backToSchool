@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+#define MAX_N 20
+#define EMPTY_VALUE -1
+
+int memo[MAX_N + 1];
+
+int f(int n) {
+    if (n == 0){memo[n]=0;return 0;}  
+    if (n == 1){memo[n]=1;return 1;} 
+  
+    if (memo[n] != -1) {
+        return memo[n];
+    }
+    
+    memo[n] = f(n - 1) + f(n - 2);
+    
+    return memo[n];
+}
+
+void init() {
+  for (int i = 0; i <= MAX_N; i++) {
+      memo[i] = EMPTY_VALUE;
+  }
+}
+
+
+int main(void) {
+init();
+  int h= f(5);
+  int i;
+  for(i =0; i<=5;i++)
+  {
+    printf("%d ",memo[i]);
+  }
+  printf("\n%d",h);
+  return 0;
+}
